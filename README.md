@@ -1,71 +1,115 @@
-# python-code-summariser README
+# 🧠 VS Code Python Code Summariser
 
-This is the README for your extension "python-code-summariser". After writing up a brief description, we recommend including the following sections.
+A Visual Studio Code extension that uses OpenAI to **summarise Python code** and **suggest improvements** — all from right inside the editor.
 
-## Features
+![VS Code Summary Panel Screenshot](./screenshots/summary-panel.png)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## ✨ Features
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- ✅ Summarise selected Python code in plain English  
+- ✅ Get intelligent optimisation tips powered by GPT  
+- ✅ Export summaries to a Markdown file  
+- ✅ Light & dark mode support  
+- ✅ Clean, modern side panel UX
 
 ---
 
-## Following extension guidelines
+## 🚀 Getting Started
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+### 1. Clone this repo
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+```bash
+git clone https://github.com/FrankEllis90/vscode-python-code-summariser.git
+cd vscode-python-code-summariser
+```
 
-## Working with Markdown
+### 2. Install dependencies
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+```bash
+npm install
+```
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+### 3. Add your OpenAI API key
 
-## For more information
+Set it in `.vscode/launch.json`:
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+```json
+"env": {
+  "OPENAI_API_KEY": "your-key-here"
+}
+```
 
-**Enjoy!**
+> ⚠️ Never commit your real API key.
+
+### 4. Launch in VS Code
+
+Press `F5` in VS Code to launch the extension in a new window.
+
+---
+
+## 🛠️ Usage
+
+1. Select a block of Python code.  
+2. Right-click and choose **“Summarise Selected Python Code”**.  
+3. View your AI-generated summary in the side panel.  
+4. Optionally export the result to Markdown.
+
+---
+
+## 📦 Build / Compile
+
+To compile:
+
+```bash
+npm run compile
+```
+
+To watch changes during development:
+
+```bash
+npm run watch
+```
+
+---
+
+## 📁 Project Structure
+
+- `src/extension.ts` – main extension logic  
+- `dist/` – compiled output  
+- `.vscode/launch.json` – debug config (should not be committed with secrets)  
+- `screenshots/` – preview images for GitHub  
+
+---
+
+## 🧪 Example
+
+```python
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+```
+
+**AI Summary:**
+> Defines a recursive function to calculate the n-th Fibonacci number. It uses a base case for n <= 1 and recursively adds the two previous numbers for higher values.
+
+---
+
+## 🧠 Powered by
+
+- [OpenAI GPT-3.5 Turbo](https://platform.openai.com/docs/)
+- [VS Code Extension API](https://code.visualstudio.com/api)
+
+---
+
+## 🧑‍💻 Author
+
+**Frank Ellis**  
+[LinkedIn](www.linkedin.com/in/frank-ellis-6881894a)  
+[GitHub](https://github.com/FrankEllis90)
+
+---
+
+## 📄 License
+
+MIT — free to use, improve, and share.
